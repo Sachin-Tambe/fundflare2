@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FundFlare</title>
+    <link rel="stylesheet" href="Create-Campaign.css">
+    
+</head>
+<body>
+    ]<header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Campaign Platform Logo">
+                <span>FundFlare</span>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="campaigns.html">Campaigns</a></li>
+                <li><a href="CreateCampaign.html">Create Campaign</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About/Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="create-campaign">
+            <h1>Create a New Campaign</h1>
+            <form id="campaignForm">
+                <label for="title">Campaign Title:</label>
+                <input type="text" id="title" required placeholder="Enter campaign title">
+
+                <label for="description">Description:</label>
+                <textarea id="description" required placeholder="Enter campaign description"></textarea>
+
+                <label for="goal">Funding Goal (in USD):</label>
+                <input type="number" id="goal" required placeholder="Enter funding goal">
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" accept="image/*" required>
+
+                <button type="submit">Create Campaign</button>
+            </form>
+            <p id="formResponse" class="response-message"></p>
+        </section>
+
+        <section class="dashboard">
+            <h1>Your Campaigns</h1>
+            <div class="campaign-list" id="campaignList"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Campaign Platform. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const campaignForm = document.getElementById("campaignForm");
+            const formResponse = document.getElementById("formResponse");
+            const campaignList = document.getElementById("campaignList");
+
+            // Load campaigns from localStorage
+            const campaigns = JSON.parse(localStorage.getItem("campaigns")) || [];
+
+            // Render campaigns on the dashboard
+            const renderCampaigns = () => {
+                campaignList.innerHTML = "";
+                campaigns.forEach((campaign, index) => {
+                    const campaignCard = document.createElement("div");
+                    campaignCard.classList.add("campaign-card");
+                    campaignCard.innerHTML = `
+                        <img src="${campaign.image}" alt="${campaign.title}">
+                        <div class="campaign-details">
+                            <h3>${campaign.title}</h3>
+                            <p>${campaign.description}</p>
+                            <p><strong>Goal:</strong> $${campaign.goal}</p>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="delete-button" data-index="${index}">Delete</button>
+                        </div>
+                    `;
+                    campaignList.appendChild(campaignCard);
+                });
+            };
+
+            renderCampaigns();
+
+            // Handle form submission
+            campaignForm?.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const title = document.getElementById("title").value.trim();
+                const description = document.getElementById("description").value.trim();
+                const goal = document.getElementById("goal").value;
+                const image = document.getElementById("image").files[0];
+
+                if (!title || !description || !goal || !image) {
+                    alert("All fields are required. Please fill out the form.");
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const campaignData = {
+                        title,
+                        description,
+                        goal,
+                        image: reader.result
+                    };
+
+                    // Save campaign data to localStorage
+                    campaigns.push(campaignData);
+                    localStorage.setItem("campaigns", JSON.stringify(campaigns));
+
+                    // Show success message
+                    formResponse.textContent = "Campaign created successfully!";
+                    formResponse.style.display = "block";
+
+                    // Reset the form
+                    campaignForm.reset();
+
+                    // Re-render campaigns
+                    renderCampaigns();
+                };
+
+                reader.readAsDataURL(image);
+            });
+
+            // Add delete functionality
+            campaignList.addEventListener("click", (event) => {
+                if (event.target.classList.contains("delete-button")) {
+                    const index = event.target.getAttribute("data-index");
+                    campaigns.splice(index, 1); // Remove the campaign from the array
+                    localStorage.setItem("campaigns", JSON.stringify(campaigns)); // Update localStorage
+                    renderCampaigns(); // Re-render campaigns
+                }
+            });
+        });
+    </script>
+</body>
+</html>

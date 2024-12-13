@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns - FundFlare</title>
+    <link rel="stylesheet" href="campagins.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Campaign Platform Logo">
+                <span>FundFlare</span>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="campaigns.html">Campaigns</a></li>
+                <li><a href="CreateCampaign.html">Create Campaign</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About/Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="campaign-listing">
+            <h1>Explore Campaigns</h1>
+            <div class="search-filter">
+                <input type="text" id="searchBar" placeholder="Search campaigns...">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="tech">Technology</option>
+                    <option value="health">Health</option>
+                    <option value="education">Education</option>
+                </select>
+            </div>
+            <div class="campaigns-grid" id="campaignGrid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Campaign Platform. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

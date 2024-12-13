@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Detail</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="campaigns.html">Campaigns</a></li>
+                <li><a href="create-campaign.html">Create Campaign</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About/Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="campaign-detail">
+            <h1 id="campaignTitle">Campaign Title</h1>
+            <img id="campaignImage" src="placeholder.jpg" alt="Campaign Image">
+            <p id="campaignDescription">Campaign description goes here.</p>
+            <p><strong>Funding Goal:</strong> $<span id="campaignGoal">10000</span></p>
+            <p><strong>Funds Raised:</strong> $<span id="fundsRaised">0</span></p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+            </div>
+            <h2>Contribute to this Campaign</h2>
+            <form id="contributionForm">
+                <label for="contributionAmount">Enter Amount ($):</label>
+                <input type="number" id="contributionAmount" min="1" required>
+                <button type="button" id="payButton">Contribute</button>
+            </form>
+            <p id="contributionMessage" class="success-message"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Campaign Platform. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('payButton').addEventListener('click', function() {
+            const amount = document.getElementById('contributionAmount').value;
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            // Razorpay configuration
+            const options = {
+                "key": "rzp_live_QPkaX069zDZkLZ", // Replace with your Razorpay Key ID
+                "amount": amount * 100, // Amount in paise
+                "currency": "USD", // Replace with your preferred currency if needed
+                "name": "Campaign Platform",
+                "description": "Contribute to Campaign",
+                "image": "https://your-logo-url.com/logo.png", // Optional logo
+                "handler": function (response) {
+                    // Handle the successful payment here
+                    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                    document.getElementById('contributionMessage').innerText = "Thank you for your contribution!";
+
+                    // Update funds raised dynamically (mock example)
+                    const currentFunds = parseFloat(document.getElementById('fundsRaised').innerText);
+                    document.getElementById('fundsRaised').innerText = (currentFunds + parseFloat(amount)).toFixed(2);
+
+                    // Update progress bar dynamically
+                    const goal = parseFloat(document.getElementById('campaignGoal').innerText);
+                    const progress = ((currentFunds + parseFloat(amount)) / goal) * 100;
+                    document.getElementById('progressBar').style.width = progress + '%';
+                },
+                "prefill": {
+                    "name": "",
+                    "email": "",
+                    "contact": ""
+                },
+                "theme": {
+                    "color": "#F37254"
+                }
+            };
+
+            const rzp1 = new Razorpay(options);
+            rzp1.open();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Campaign Platform Logo">
+                <span>FundFlare</span>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="campaigns.html">Campaigns</a></li>
+                <li><a href="CreateCampaign.html">Create Campaign</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About/Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="dashboard">
+            <h1>Welcome to Your Dashboard</h1>
+            <h2>Your Contributions</h2>
+            <table id="contributionsTable">
+                <thead>
+                    <tr>
+                        <th>Campaign</th>
+                        <th>Amount Contributed ($)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contributions data will be dynamically inserted here -->
+                </tbody>
+            </table>
+
+            <h2>Your Campaigns</h2>
+            <div id="campaignsContainer" class="campaigns-container">
+                <!-- Campaign cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Campaign Platform. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

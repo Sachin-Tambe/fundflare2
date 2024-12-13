@@ -1,0 +1,543 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.featured-campaigns {
+    padding: 2rem;
+    background-color: #e9ecef;
+}
+
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+/* General styling for body and header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Search and filter section */
+.search-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Campaign grid styling */
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.campaign-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+}
+
+.campaign-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.campaign-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.campaign-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.campaign-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/* General styles for body and header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.campaign-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.campaign-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #28a745;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+form {
+    margin-top: 1.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    width: 150px;
+}
+
+form button {
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    color: green;
+    margin-top: 1rem;
+}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Campaign cards styling */
+.campaigns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.campaign-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.campaign-card h3 {
+    margin: 0.5rem 0;
+}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* About section styling */
+.about {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about h1 {
+    margin-bottom: 1rem;
+}
+
+.about p {
+    margin: 0.5rem 0;
+}
+
+/* Contact form styling */
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Response message */
+.response-message {
+    color: green;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+/* Style for the main container of campaigns */
+.campaigns-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth; /* Adds smooth scrolling */
+}
+
+.campaign-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.campaign-card:hover {
+    transform: scale(1.05);
+}
+
+/* Style the scrollbar */
+.campaigns-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.campaigns-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.campaigns-grid::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Scroll button styles (optional) */
+#scrollLeft, #scrollRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#scrollLeft {
+    left: 10px;
+}
+
+#scrollRight {
+    right: 10px;
+}
+/* Style for footer */
+footer {
+    background-color: #2c3e50; /* Dark blue background */
+    color: white; /* White text */
+    padding: 20px 0; /* Padding at top and bottom */
+    text-align: center; /* Center align the content */
+    font-family: 'Arial', sans-serif; /* Font style */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the footer links */
+footer a {
+    color: #ecf0f1; /* Light grey text color */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for footer links */
+footer a:hover {
+    color: #f39c12; /* Change to a warm color on hover */
+}
+
+/* Style for the footer social icons (if any) */
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #ecf0f1;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for social icons */
+footer .social-icons a:hover {
+    color: #f39c12;
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 10px;
+    }
+
+    footer a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px;
+    }
+}
